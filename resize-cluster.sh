@@ -14,7 +14,7 @@ i=1
 rm config/slaves
 while [ $i -lt $N ]
 do
-	echo "slave$i" >> config/slaves
+	echo "hadoop-slave$i" >> config/slaves
 	((i++))
 done 
 
@@ -22,7 +22,7 @@ echo ""
 
 echo -e "\nbuild docker hadoop image\n"
 
-# rebuild chunggil/hadoop image
-sudo docker build -t chunggil/hadoop:1.0 .
+# rebuild kiwenlau/hadoop image
+sudo docker build -t kiwenlau/hadoop:1.0 .
 
 echo ""
