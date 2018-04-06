@@ -1,5 +1,5 @@
 # Set the base image to Ubuntu
-FROM ubuntu:16.04
+FROM chunggil/ubuntu-update:v1.0
 
 MAINTAINER chunggil <chunggil@gmail.com>
 
