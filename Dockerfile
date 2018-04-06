@@ -5,12 +5,6 @@ MAINTAINER chunggil <chunggil@gmail.com>
 
 WORKDIR /root
 
-# install openssh-server, wget
-RUN apt-get update && apt-get install -y openssh-server wget
-
-# install jdk
-RUN apt-get install oracle-java9-installer
-
 # install hadoop 3.1.0
 RUN wget http://apache.mirror.globo.tech/hadoop/common/hadoop-3.1.0/hadoop-3.1.0.tar.gz && \
     tar -xzvf hadoop-3.1.0.tar.gz && \
