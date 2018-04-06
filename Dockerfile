@@ -1,4 +1,4 @@
-FROM ubuntu:14.06
+FROM ubuntu:16.04
 
 MAINTAINER Chunggil <chunggil@gmail.com>
 
