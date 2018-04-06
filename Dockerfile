@@ -1,24 +1,26 @@
-# Set the base image to Ubuntu
-FROM chunggil/ubuntu-update:v1.0
+FROM ubuntu:14.06
 
-MAINTAINER chunggil <chunggil@gmail.com>
+MAINTAINER Chunggil <chunggil@gmail.com>
 
 WORKDIR /root
+
+# install openssh-server, openjdk and wget
+RUN apt-get update && apt-get install -y openssh-server openjdk-7-jdk wget
 
 # install hadoop 3.1.0
 RUN wget http://apache.mirror.globo.tech/hadoop/common/hadoop-3.1.0/hadoop-3.1.0.tar.gz && \
     tar -xzvf hadoop-3.1.0.tar.gz && \
     mv hadoop-3.1.0 /usr/local/hadoop && \
-rm hadoop-3.1.0.tar.gz
+    rm hadoop-3.1.0.tar.gz
 
-
-ENV JAVA_HOME=/usr/lib/jvm/java-9-oracle
+# set environment variable
+ENV JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 
 ENV HADOOP_HOME=/usr/local/hadoop 
 ENV PATH=$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin 
 
 # ssh without key
 RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
-cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
 RUN mkdir -p ~/hdfs/namenode && \ 
     mkdir -p ~/hdfs/datanode && \
