@@ -17,7 +17,7 @@ ENV HADOOP_HOME=/usr/local/hadoop
 ENV PATH=$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin 
 
 # ssh without key
-RUN ssh-keygen -t rsa && \
+RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
 RUN mkdir -p ~/hdfs/namenode && \ 
