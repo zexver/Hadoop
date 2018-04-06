@@ -5,7 +5,7 @@ N=${1:-2}
 
 
 # start hadoop master container
-sudo docker rm -f hadoop-master &> /dev/null
+sudo docker rm -f master &> /dev/null
 echo "start master container..."
 sudo docker run -itd \
                 --net=hadoop \
