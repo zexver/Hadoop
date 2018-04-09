@@ -5,7 +5,8 @@ MAINTAINER Chunggil <chunggil@gmail.com>
 WORKDIR /root
 
 # install openssh-server, openjdk and wget
-RUN apt-get update && apt-get install -y openssh-server openjdk-7-jdk wget
+# RUN apt-get update && apt-get install -y openssh-server openjdk-7-jdk wget
+RUN apt-get update && apt-get install -y openssh-server wget
 
 # install hadoop 3.1.0
 RUN wget http://apache.mirror.globo.tech/hadoop/common/hadoop-3.1.0/hadoop-3.1.0.tar.gz && \
@@ -14,7 +15,7 @@ RUN wget http://apache.mirror.globo.tech/hadoop/common/hadoop-3.1.0/hadoop-3.1.0
     rm hadoop-3.1.0.tar.gz
 
 # set environment variable
-ENV JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 
+# ENV JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 
 ENV HADOOP_HOME=/usr/local/hadoop 
 ENV PATH=$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin 
 
