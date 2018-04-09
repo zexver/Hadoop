@@ -12,6 +12,7 @@ sudo docker run -itd \
                 -p 50070:50070 \
                 -p 8088:8088 \
 		-p 18080:18080 \
+		-p 8888:8888 \
                 --name hadoop-master \
                 --hostname hadoop-master \
                 chunggil/hadoop:1.0 &> /dev/null
