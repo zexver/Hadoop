@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-MAINTAINER Chunggil <chunggil@gmail.com>
+MAINTAINER Chunggil <chunggil.han@gmail.com>
 
 WORKDIR /root
 
